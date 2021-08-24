@@ -28,7 +28,7 @@ class SudoSpawner(LocalProcessSpawner):
     sudospawner_path = Unicode(shutil.which('sudospawner') or 'sudospawner', config=True,
         help="Path to sudospawner script"
     )
-    sudo_args = List(['-nHE'], config=True,
+    sudo_args = List(['-nH', '--preserve-env=PATH'], config=True,
         help="Extra args to pass to sudo"
     )
     mediator_log_level = Unicode("INFO", config=True,
